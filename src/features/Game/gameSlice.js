@@ -88,27 +88,30 @@ const gameSlice = createSlice({
       state.moveCount = 0;
     },
     setSelectedLevel(state, action) {
-      if(action.payload === 'easy') {
-        state.selectedLevel = 'easy';
-        state.cards = generateSymbols(16);
-        state.leftTime = 5 * 60;
-      } else if(action.payload === 'medium') {
-        state.selectedLevel = 'medium';
-        state.cards = generateSymbols(24);
-        state.leftTime = 7 * 60 + 30;
-      } else if(action.payload === 'hard') {
-        state.selectedLevel = 'hard';
-        state.cards = generateSymbols(36);
-        state.leftTime = 10 * 60;
+      const { payload } = action;
+      state.selectedLevel = payload;
+      switch (payload) {
+        case 'easy':
+          state.symbolCount = 16;
+          break;
+        case 'medium':
+          state.symbolCount = 24;
+          break;
+        case 'hard':
+          state.symbolCount = 36;
+          break;
+        default:
+          state.symbolCount = 16;
+          break;
       }
     },
-  },
-  startGame(state) {
-    state.isGameStarted = true;
-  },
-
-  endGame(state) {
-    state.isGameStarted = false;
+    startGame(state) {
+      state.isGameStarted = true;
+    },
+  
+    endGame(state) {
+      state.isGameStarted = false;
+    },
   },
 });
 

@@ -19,12 +19,36 @@
   flex-wrap: wrap;
   background-color: aqua;
   box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  padding: 15px;
 }
 
-.card {
+.card{
   width: 150px;
   height: 150px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  perspective: 1000px; 
+  cursor: pointer;
+}
+
+
+.card_medium{
+  width: 130px;
+  height: 140px;
   margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  perspective: 1000px; 
+  cursor: pointer;
+}
+
+.card_hard{
+  width: 100px;
+  height: 100px;
+  margin: 9px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
